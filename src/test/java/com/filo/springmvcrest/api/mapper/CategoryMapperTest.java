@@ -16,7 +16,7 @@ class CategoryMapperTest {
 
     CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
 
-    //@Test
+    @Test
     public void categoryToCategoryDTO() {
 
         //given

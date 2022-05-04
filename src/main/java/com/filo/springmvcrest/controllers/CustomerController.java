@@ -4,8 +4,6 @@ import com.filo.springmvcrest.api.model.CustomerDTO;
 import com.filo.springmvcrest.api.model.CustomerListDTO;
 import com.filo.springmvcrest.services.CustomerService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
