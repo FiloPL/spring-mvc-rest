@@ -53,24 +53,24 @@ public class Bootstrap implements CommandLineRunner{
         categoryRespository.save(exotic);
         categoryRespository.save(nuts);
 
-        System.out.println("Categories Loaded: " + categoryRespository.count());
+        log.info("Categories Loaded: " + categoryRespository.count());
     }
 
     private void loadCustomers() {
         //given
         Customer customer1 = new Customer();
-        customer1.setId(1l);
+        customer1.setId(1L);
         customer1.setFirstname("Michale");
         customer1.setLastname("Weston");
         customerRepository.save(customer1);
 
         Customer customer2 = new Customer();
-        customer2.setId(2l);
+        customer2.setId(2L);
         customer2.setFirstname("Sam");
         customer2.setLastname("Axe");
 
         customerRepository.save(customer2);
 
-        System.out.println("Customers Loaded: " + customerRepository.count());
+        log.info("Customers Loaded: " + customerRepository.count());
     }
 }
