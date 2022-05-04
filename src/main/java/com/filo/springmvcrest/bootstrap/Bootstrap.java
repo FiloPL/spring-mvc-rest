@@ -2,8 +2,10 @@ package com.filo.springmvcrest.bootstrap;
 
 import com.filo.springmvcrest.domain.Category;
 import com.filo.springmvcrest.domain.Customer;
+import com.filo.springmvcrest.domain.Vendor;
 import com.filo.springmvcrest.repositories.CategoryRepository;
 import com.filo.springmvcrest.repositories.CustomerRepository;
+import com.filo.springmvcrest.repositories.VendorRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,18 +20,30 @@ public class Bootstrap implements CommandLineRunner{
 
     private final CategoryRepository categoryRespository;
     private final CustomerRepository customerRepository;
+    private final VendorRepository vendorRepository;
 
-    public Bootstrap(CategoryRepository categoryRespository, CustomerRepository customerRepository) {
+    public Bootstrap(CategoryRepository categoryRespository, CustomerRepository customerRepository, VendorRepository vendorRepository) {
         this.categoryRespository = categoryRespository;
         this.customerRepository = customerRepository;
+        this.vendorRepository = vendorRepository;
     }
-
     @Override
     public void run(String... args)  {
-
         loadCategories();
         loadCustomers();
+        loadVendors();
     }
+
+    private void loadVendors() {
+        Vendor vendor1 = new Vendor();
+        vendor1.setName("Vendor 1");
+        vendorRepository.save(vendor1);
+
+        Vendor vendor2 = new Vendor();
+        vendor2.setName("Vendor 2");
+        vendorRepository.save(vendor2);
+    }
+
 
     private void loadCategories() {
         Category fruits = new Category();
