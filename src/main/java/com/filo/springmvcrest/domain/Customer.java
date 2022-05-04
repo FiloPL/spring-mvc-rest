@@ -1,27 +1,25 @@
 package com.filo.springmvcrest.domain;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 /**
  * Created by T. Filo Zegarlicki on 04.05.2022
  **/
 
-@Data
 @Entity
-public class Category {
+@Data
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    private String firstname;
+    private String lastname;
 
     public Long getId() {
         return id;
@@ -31,11 +29,19 @@ public class Category {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 }
